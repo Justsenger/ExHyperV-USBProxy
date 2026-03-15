@@ -1,2 +1,20 @@
-/.vs
-/.vs
+# 忽略所有层级下的缓存和编译输出
+.vs/
+[Xx]64/
+[Xx]86/
+[Dd]ebug/
+[Rr]elease/
+obj/
+bin/
+
+# 忽略特定后缀
+*.user
+*.suo
+*.pdb
+*.obj
+*.log
+*.tlog
+*.recipe
+*.ilk
+*.exe
+*.dll
