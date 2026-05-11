@@ -4,29 +4,29 @@
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D4.svg)]()
 [![Project](https://img.shields.io/badge/Part%20of-ExHyperV-8957e5.svg)](https://github.com/Justsenger/ExHyperV)
 
-`ExHyperV-USBProxy` 是 **[ExHyperV](https://github.com/Justsenger/ExHyperV)** 项目的核心依赖组件之一。它主要用于实现 USBIP 协议在 Hyper-V 环境下的高性能传输。
+`ExHyperV-USBProxy` is a core dependency of the **[ExHyperV](https://github.com/Justsenger/ExHyperV)** project, designed to deliver high-performance USBIP transport inside a Hyper-V environment.
 
-## 📖 项目简介
+## 📖 Overview
 
-在 Hyper-V 虚拟机中使用 USB 设备时，传统的网络方案往往受限于虚拟网卡的性能或配置复杂性。本项目作为"一阶方案"的代理工具，通过将标准的 **TCP/IP (USBIP)** 数据包封装进 **AF_HYPERV (Hyper-V Sockets)** 进行传输。
+When using USB devices inside a Hyper-V virtual machine, traditional network-based solutions are often limited by virtual NIC performance or complex configuration requirements. This project acts as a first-stage proxy, tunneling standard **TCP/IP (USBIP)** traffic over **AF_HYPERV (Hyper-V Sockets)** instead.
 
-### 为什么选择 AF-HYPERV？
+### Why AF_HYPERV?
 
-- **高性能**：绕过传统的网络协议栈，减少封装开销。
-- **低延迟**：Host 与 Guest 之间直接通过 VMBus 通信。
-- **零配置**：无需为虚拟机配置物理 IP 地址或 NAT 转发即可建立连接。
+- **High Performance**: Bypasses the traditional network stack, eliminating encapsulation overhead.
+- **Low Latency**: Host and Guest communicate directly over VMBus.
+- **Zero Configuration**: No IP address or NAT setup required — the connection just works.
 
-## 功能特性
+## Features
 
-- **协议转换**：将 USBIP 的 TCP 数据流无缝桥接到 AF_HYPERV。
-- **高性能传输**：针对 Hyper-V 环境优化的数据转发逻辑。
-- **轻量化**：C++ 编写，无冗余依赖，运行开销极低。
-- **配套支持**：作为 ExHyperV 的核心组件，支持自动化挂载流程。
+- **Protocol Bridging**: Seamlessly forwards USBIP TCP streams over AF_HYPERV.
+- **Optimized Forwarding**: Data relay logic tuned specifically for the Hyper-V environment.
+- **Lightweight**: Written in C++ with no unnecessary dependencies and minimal runtime overhead.
+- **Automated Mounting**: Integrates with ExHyperV to support fully automated USB attach workflows.
 
-### 依赖环境
+## Requirements
 
-- Windows 10/11 或 Windows Server 2016+
+- Windows 10/11 or Windows Server 2016+
 
-### 安装与运行
+## Installation
 
-在 [Releases](https://github.com/Justsenger/ExHyperV-USBProxy/releases) 页面下载最新的 `USBProxy.exe`。
+Download the latest `USBProxy.exe` from the [Releases](https://github.com/Justsenger/ExHyperV-USBProxy/releases) page.
